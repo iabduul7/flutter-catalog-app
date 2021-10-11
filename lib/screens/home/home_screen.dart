@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,14 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: const Center(
-        child: Text('Hello World!'),
+        child: Text(
+          'Hello World!',
+          style: TextStyle(
+            fontSize: 48,
+            fontFamily: 'Poppins-Italic',
+            fontWeight: FontWeight.w300,
+          ),
+        ),
       ),
       drawer: const Drawer(),
     );
