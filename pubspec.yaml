@@ -73,23 +73,23 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
           weight: 700
-        - asset: assets/fonts/Poppins-Italic.ttf
+        - asset: assets/fonts/poppins/Poppins-Italic.ttf
           style: italic
-        - asset: assets/fonts/Poppins-Medium.ttf
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
           weight: 500
     - family: Ubuntu
       fonts:
-        - asset: assets/fonts/Ubuntu-Regular.ttf
-        - asset: assets/fonts/Ubuntu-Light.ttf
+        - asset: assets/fonts/ubuntu/Ubuntu-Regular.ttf
+        - asset: assets/fonts/ubuntu/Ubuntu-Light.ttf
           weight: 200
-        - asset: assets/fonts/Ubuntu-Medium.ttf
+        - asset: assets/fonts/ubuntu/Ubuntu-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Ubuntu-Bold.ttf
+        - asset: assets/fonts/ubuntu/Ubuntu-Bold.ttf
           weight: 700
-        - asset: assets/fonts/Ubuntu-Italic.ttf
+        - asset: assets/fonts/ubuntu/Ubuntu-Italic.ttf
           style: italic
 
   #

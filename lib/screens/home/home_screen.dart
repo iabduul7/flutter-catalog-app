@@ -10,6 +10,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Catalog Application',
+          style: TextStyle(
+            fontFamily: 'Ubuntu',
+            fontWeight: FontWeight.w300,
+          ),
         ),
         actions: [
           IconButton(
@@ -66,7 +70,7 @@ class HomeScreen extends StatelessWidget {
           'Hello World!',
           style: TextStyle(
             fontSize: 48,
-            fontFamily: 'Poppins-Italic',
+            fontFamily: 'Ubuntu',
             fontWeight: FontWeight.w300,
           ),
         ),
