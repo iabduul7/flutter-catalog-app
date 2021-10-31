@@ -70,7 +70,6 @@ class HomeScreen extends StatelessWidget {
           'Hello World!',
           style: TextStyle(
             fontSize: 48,
-            fontFamily: 'Ubuntu',
             fontWeight: FontWeight.w300,
           ),
         ),
