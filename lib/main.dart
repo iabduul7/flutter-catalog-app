@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         in "routes:" when you have '/' defined, opt to use "home:"
         it will through errors.
       */
-      initialRoute: Routes.login,
+      initialRoute: Routes.home,
     );
   }
 }
