@@ -9,13 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Catalog Application',
-          style: TextStyle(
-            fontFamily: 'Ubuntu',
-            fontWeight: FontWeight.w300,
-          ),
-        ),
+        title: const Text('Catalog Application'),
         actions: [
           IconButton(
               onPressed: () => showDialog<String>(

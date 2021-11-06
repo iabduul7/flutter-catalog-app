@@ -4,6 +4,7 @@ import 'package:flutter_first_application/screens/auth/register_screen.dart';
 import 'package:flutter_first_application/screens/auth/login_screen.dart';
 import 'package:flutter_first_application/screens/home/home_screen.dart';
 import 'package:flutter_first_application/utils/routes.dart';
+import 'package:flutter_first_application/widgets/theme.dart';
 
 void main(List<String> args) => runApp(const MyApp());
 
@@ -15,12 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Ubuntu',
-      ),
-      darkTheme: ThemeData(brightness: Brightness.dark),
+      themeMode: ThemeMode.light,
+      theme: CustomTheme.lightTheme(context),
+      darkTheme: CustomTheme.darkTheme(context),
       routes: {
         Routes.home: (context) => const HomeScreen(),
         Routes.login: (context) => const LoginScreen(),
