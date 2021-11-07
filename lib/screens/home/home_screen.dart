@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_first_application/models/product.dart';
 import 'package:flutter_first_application/widgets/drawer.dart';
+import 'package:flutter_first_application/widgets/product_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(10, (index) => Product.get[0]);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Catalog Application'),
@@ -60,13 +63,13 @@ class HomeScreen extends StatelessWidget {
               })
         ],
       ),
-      body: const Center(
-        child: Text(
-          'Hello World!',
-          style: TextStyle(
-            fontSize: 48,
-            fontWeight: FontWeight.w300,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ProductWidget(product: dummyList[index]);
+          },
         ),
       ),
       drawer: const CustomDrawer(),
