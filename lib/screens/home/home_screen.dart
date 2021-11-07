@@ -1,15 +1,37 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_first_application/models/product.dart';
 import 'package:flutter_first_application/widgets/drawer.dart';
 import 'package:flutter_first_application/widgets/product_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
+  _loadData() async {
+    await Future.delayed(const Duration(seconds: 2));
+    var raw = await rootBundle.loadString('assets/files/products.json');
+    var products = jsonDecode(raw)['products'];
+    Product.all =
+        List.from(products).map((product) => Product.fromMap(product)).toList();
+    setState(() {});
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final dummyList = List.generate(10, (index) => Product.get[0]);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Catalog Application'),
@@ -65,12 +87,16 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: dummyList.length,
-          itemBuilder: (context, index) {
-            return ProductWidget(product: dummyList[index]);
-          },
-        ),
+        child: (Product.all == null)
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : ListView.builder(
+                itemCount: Product.all?.length,
+                itemBuilder: (context, index) {
+                  return ProductWidget(product: Product.all![index]);
+                },
+              ),
       ),
       drawer: const CustomDrawer(),
     );
